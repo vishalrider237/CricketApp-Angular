@@ -1,0 +1,28 @@
+<div class="table-container">
+  <h1 class="text-4xl font-extrabold text-gray-800 px-2">Point Table</h1>
+  <table class="shadow-lg text-center mt-8 min-w-full bg-white border border-b-gray-300">
+    <thead>
+    <tr>
+        @for(heading of tableHeading; track $index){
+      <th class=" py-3 px-4 border-b">{{heading}}</th>
+      }
+    </tr>
+    </thead>
+    <tbody>
+    @for(pointtable of PointTable; track $index){
+    <tr class="hover:bg-gray-100 hover:scale-110 transition-all cursor-pointer">
+         @if($index>0){
+     @for(team of pointtable; track $index){
+           <td class="py-3 px-4 border-b">{{team}}</td>
+
+         }
+    }
+
+       </tr>
+    }
+
+
+    <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</div>
